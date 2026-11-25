@@ -1,0 +1,54 @@
+name: Engine versions
+
+# Builds and tests angelscript-cli against every official AngelScript release from 2.20.0 and uploads the matrix.
+on:
+  workflow_dispatch:
+    inputs:
+      from:
+        description: First AngelScript version to test
+        default: 2.20.0
+        type: string
+      cli_ref:
+        description: angelscript-cli branch, tag or commit to test
+        default: main
+        type: string
+  schedule:
+    - cron: '0 5 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  matrix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: Gaftherman/angelscript-cli
+          ref: ${{ inputs.cli_ref || 'main' }}
+          path: cli
+          submodules: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install Ninja
+        run: python -m pip install ninja
+      - name: Test every release
+        env:
+          FROM: ${{ inputs.from || '2.20.0' }}
+          ASDEBUGGER_DIR: ${{ github.workspace }}/cli/external/angelscript-dap
+        run: python scripts/engine-matrix.py --cli cli --from "$FROM" --out build/matrix.json --work build/matrix
+      - name: Write the report
+        run: |
+          cp build/matrix.json engines/matrix.json
+          python scripts/engine-report.py
+          cat docs/ENGINE_VERSIONS.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: engine-matrix
+          path: |
+            engines/matrix.json
+            docs/ENGINE_VERSIONS.md
+            build/matrix/logs/*.log

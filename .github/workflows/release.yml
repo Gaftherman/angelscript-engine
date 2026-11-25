@@ -1,0 +1,37 @@
+name: Release
+
+# Publishes the patched SDK of every supported engine when a tag is pushed, after CI passed for that commit.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  sdk:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Build the patched SDK archives
+        run: |
+          for version in 2.38.0 2.37.0 2.36.1 2.35.1 2.33.0 2.30.2; do
+            python scripts/prepare-sdk.py "$version" --out build/sdk --tarball dist > /dev/null
+          done
+          (cd dist && sha256sum angelscript-sdk-*-patched.tar.gz > SHA256SUMS)
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notes=$(python - <<'PY'
+          import re
+          text = open('CHANGELOG.md', encoding='utf-8').read()
+          match = re.search(r'^## \[' + re.escape('${{ github.ref_name }}'.lstrip('v')) + r'\].*?(?=^## \[|\Z)', text, re.S | re.M)
+          print(match.group(0).strip() if match else '')
+          PY
+          )
+          test -n "$notes" || { echo "CHANGELOG.md has no section for ${{ github.ref_name }}"; exit 1; }
+          gh release create "${{ github.ref_name }}" dist/* --title "${{ github.ref_name }}" --notes "$notes"

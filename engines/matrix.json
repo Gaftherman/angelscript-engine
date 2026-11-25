@@ -1,0 +1,518 @@
+[
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "63980b172193a070f859d496c6c1bf9c91303b50fe0541094411cb595a8ab314",
+    "tests": {
+      "passed": 10,
+      "total": 21
+    },
+    "version": "2.20.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "7c72401034b21164abca90580eedba8e12439cb41f4c4da8cc2ea589ca6b1baf",
+    "tests": {
+      "passed": 10,
+      "total": 21
+    },
+    "version": "2.20.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 4,
+    "sha256": "4a7c3c1b567f869cbaa1d05d5ffc47f948fbf90f0168fb679f86b623b632ad68",
+    "tests": {
+      "passed": 18,
+      "total": 21
+    },
+    "version": "2.20.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "67a41e6e6de67d1b3ff6668d70d856242dc489da030707ea4a95ed63cb88cebf",
+    "tests": {
+      "passed": 18,
+      "total": 21
+    },
+    "version": "2.20.3"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "dec75796e589eb7185cb089d91fb4dcf7ce4eef15ec1c78e4f26dc3b83cb06a3",
+    "tests": {
+      "passed": 20,
+      "total": 21
+    },
+    "version": "2.21.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "9d3743c25d43560e31dc91b2f0d9a47249c3e91e69967488cda370de45f70548",
+    "tests": {
+      "passed": 20,
+      "total": 21
+    },
+    "version": "2.22.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "f542b3e8b880fe1393fecb81622404221b3489d5db3192c3c0fe557f1603bc3a",
+    "tests": {
+      "passed": 20,
+      "total": 21
+    },
+    "version": "2.22.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "83347de8649924d57e6de8b738faa5c7b6b0f9606ff174691c687cbbe828e8de",
+    "tests": {
+      "passed": 20,
+      "total": 21
+    },
+    "version": "2.22.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "667e5238c1ec687df8e5b6888871855a50d892a548970680f6c8556f19023e0c",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.23.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "a4a7e061849e80603d759f2373cd30669da193f62983aeb339637dfc4501ea70",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.23.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "3b960c5ebd6f830ab8c0479c270cc7ecdd84f9492c01a8acaffe943fd7837899",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.24.0a"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "a4abc4a05ad83466c75bd1d8f600f2cfd18d0793ee3bfcb3a5605a5396c79227",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.24.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "9a010da968dc0a6e12aa0ad2cb9e48b62dfe5bf29965fdd8365b72e19841ad75",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.25.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "b1a1d274f7f70f7c32c3d95ebdaf01aeb55cbd6204a03c7e3dda0716c3698143",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.25.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 5,
+    "sha256": "84f2befc22f0541becf987519f6dc3d5dd561547bb5e6219327374ead0d516eb",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.25.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "2701441de3e8bdbb601d560b95bd6302a82ab9432fb64b1634f7667468f57f9e",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.26.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "40896a61008671df8210efe9d1b9dc78fc32dafca35f5b4d2526b151ff7d97e6",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.26.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "53b8c71118a3a317d71ecbcc89be3e623b98e5c7cf5bc3c884859d4ca143cf0f",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.26.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "c2fd4a8ec001b78a9edc11b31e4c87d30922be74817f339d067b096fbdd4c1dc",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.26.3"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "5bb3b197c972dc5021da5cd05f8bf8181e5d11195e6391d2193c9d0a81a4da5a",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.27.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "125a8c4fd432f71dc3b375683d0530e88e6bb692e63d3e4efbcc2bfd9abed32d",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.27.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 8,
+    "sha256": "ff6ebce580ece45f1fa2a3dc9cece16540670ea3b54b1acb5cafcc1a43479ede",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.28.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 8,
+    "sha256": "d17f1e9ba784098c86b7b6f8ae57efde153dcada29d0b970b9712e33ec56d034",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.28.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "54bc6126d2ba2509f3916ff139758d3c3c2185dddb521fc040110c5afde6000a",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.28.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 8,
+    "sha256": "bd1a76a7c89a4313ab1d85fe65d9c1e32be76cf572e41c421a5a0cd41b8a0bbc",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.29.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "854e7700f17608736251f3eba7797eedcce3dc30df82979f8480c2602d072a20",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.29.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "c5d549bcd2d04e0dbdfdeea1e1446a34bc9dc449efe0d6fb7fabfb98ee269a8b",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.29.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "adfcc5c5eecb8985734dda66dd54b0f0b765d199fe6f0d55c29386679e808703",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.30.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 8,
+    "sha256": "a492331d3ede33f96a3b882bb09fff0f71e6e9479f9b5d78fdcf08585038d583",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.30.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "8c08774bc1ca683124b4996ab4459f4b2b10bdacd860e76f28fb5b504332d7d7",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.30.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "269c94a9a6526b85c0d180657fa749d507cf791c07ed264a1126b6927e7d400d",
+    "tests": {
+      "passed": 19,
+      "total": 21
+    },
+    "version": "2.31.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 8,
+    "sha256": "b04a9aed467e014130f8daf2fe52f41d3f6485c703d7dd1114cdd916b8e8e003",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.31.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 6,
+    "sha256": "0c0b8097c7c8355c9e95c193a6bf3778fb783604af133d37c09c3465c6f381b2",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.31.2"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "b49d72f8ada622b7cb5b266e7cea5ab5c553ea7fe078877dcf6f6c03d487e518",
+    "tests": {
+      "passed": 21,
+      "total": 21
+    },
+    "version": "2.32.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 8,
+    "sha256": "3691090b23d4382849a4f4e0ab71d94526636c64deec94a97d7d9419e2e21ea3",
+    "tests": {
+      "passed": 24,
+      "total": 24
+    },
+    "version": "2.33.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 9,
+    "sha256": "6faa043717522ae0fb2677d907ca5b0e35a79d28e5f83294565e6c6229bfbdf7",
+    "tests": {
+      "passed": 24,
+      "total": 24
+    },
+    "version": "2.34.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "010dd45e23e734d46f5891d70e268607a12cb9ab12503dda42f842d9db7e8857",
+    "tests": {
+      "passed": 24,
+      "total": 24
+    },
+    "version": "2.35.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 7,
+    "sha256": "5c1096b6d6cf50c7e77ae93c736d35b69b07b1e5047161c7816bca25b413a18b",
+    "tests": {
+      "passed": 24,
+      "total": 24
+    },
+    "version": "2.35.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 290,
+    "sha256": "33f95f7597bc0d88b097d35e7b1320d15419ffc5779851d9d2a6cccec57811b3",
+    "tests": {
+      "passed": 25,
+      "total": 25
+    },
+    "version": "2.36.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 50,
+    "sha256": "58bb749af9c7e386304705f4e6e627ae41dfe03e0b6a73c3d0d2e017c4fc948f",
+    "tests": {
+      "passed": 25,
+      "total": 25
+    },
+    "version": "2.36.1"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 53,
+    "sha256": "0c52d1688016a0b2484e9ca549471c4e295df060770c57840144c64815f54f10",
+    "tests": {
+      "passed": 25,
+      "total": 25
+    },
+    "version": "2.37.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 67,
+    "sha256": "b33b5dbcda10317ef67d628353d83246984ce6fcac102d4dc2aed121eba52e6f",
+    "tests": {
+      "passed": 25,
+      "total": 25
+    },
+    "version": "2.38.0"
+  },
+  {
+    "builds": true,
+    "configure": true,
+    "error": "",
+    "seconds": 55,
+    "sha256": "f029bea4e52c360c750d3a805b80f9317d177241fadbc8f93845e38355d11287",
+    "tests": {
+      "passed": 25,
+      "total": 25
+    },
+    "version": "2.39.0"
+  }
+]

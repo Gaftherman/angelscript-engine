@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: Engine ${{ matrix.engine }} (${{ matrix.target.os }} ${{ matrix.target.arch }})
+    runs-on: ${{ matrix.target.runner }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: ['2.38.0', '2.37.0', '2.36.1', '2.35.1', '2.33.0', '2.30.2']
+        target:
+          - {runner: windows-latest, os: windows, arch: x64, msvc: x64, toolchain: ''}
+          - {runner: windows-latest, os: windows, arch: x86, msvc: amd64_x86, toolchain: ''}
+          - {runner: ubuntu-24.04, os: linux, arch: x64, msvc: x64, toolchain: ''}
+          - {runner: ubuntu-24.04, os: linux, arch: x86, msvc: x64, toolchain: cmake/linux-x86.cmake}
+          - {runner: ubuntu-24.04-arm, os: linux, arch: arm64, msvc: x64, toolchain: ''}
+          - {runner: macos-15, os: macos, arch: arm64, msvc: x64, toolchain: ''}
+          - {runner: macos-15-intel, os: macos, arch: x64, msvc: x64, toolchain: ''}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: ilammy/msvc-dev-cmd@v1
+        if: runner.os == 'Windows'
+        with:
+          arch: ${{ matrix.target.msvc }}
+      - name: Install 32-bit toolchain
+        if: matrix.target.os == 'linux' && matrix.target.arch == 'x86'
+        run: sudo apt-get update && sudo apt-get install -y g++-multilib
+      - name: Prepare the SDK, build and run the smoke host
+        shell: pwsh
+        env:
+          TOOLCHAIN: ${{ matrix.target.toolchain }}
+        run: |
+          if ($env:TOOLCHAIN) { $env:CMAKE_TOOLCHAIN_FILE = Join-Path $PWD $env:TOOLCHAIN }
+          python -m pip install ninja
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $sdk = python scripts/prepare-sdk.py ${{ matrix.engine }} --out build/sdk --tarball dist | Select-Object -Last 1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cmake -S tests/smoke -B build/smoke -G Ninja -DCMAKE_BUILD_TYPE=Release "-DANGELSCRIPT_SDK=$sdk"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cmake --build build/smoke
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ctest --test-dir build/smoke --output-on-failure
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: matrix.target.os == 'linux' && matrix.target.arch == 'x64'
+        with:
+          name: sdk-${{ matrix.engine }}
+          path: dist/angelscript-sdk-${{ matrix.engine }}-patched.tar.gz
+          if-no-files-found: error
+          compression-level: 0
