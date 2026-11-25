@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1]
+
+### Changed
+
+- The README describes the repository as the legacy support for releases older than the one angelscript-cli bundles. The current release no longer depends on it; the weekly matrix still builds it through `cmake/AngelScriptEngine.cmake`.
+
 ## [0.1.0]
 
 ### Added

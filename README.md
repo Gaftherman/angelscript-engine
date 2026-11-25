@@ -2,6 +2,17 @@
 
 Builds any official [AngelScript](https://www.angelcode.com/angelscript/) release, from 2.20 to the latest, with a few compatibility fixes applied to a copy of the sources. [angelscript-cli](https://github.com/Gaftherman/angelscript-cli) uses it to build one executable per engine version.
 
+## Role
+
+This repository is the **legacy support** for older AngelScript releases. The current release is built by
+[angelscript-cli](https://github.com/Gaftherman/angelscript-cli) straight from the official sources (its
+`external/angelscript` submodule), because it needs no patches. Every earlier release goes through here: the download,
+its SHA-256 pin, the compatibility fixes and the CMake module. The weekly matrix still builds the current release
+through this module too, so a regression in the module shows up before an older release needs it.
+
+The CLI installs one AngelScript release at a time. The releases it offers (and the JIT builds from 2.37) are the ones
+listed in `scripts/plan-engine-builds.py` of angelscript-cli.
+
 ## What it does
 
 - **`scripts/prepare-sdk.py <version> --out <dir>`** downloads the release from angelcode.com, checks its SHA-256 against `engines/versions.json`, extracts it and patches the copy. It never touches the download. `--tarball <dir>` also writes `angelscript-sdk-<version>-patched.tar.gz`.
