@@ -24,6 +24,16 @@ listed in `scripts/plan-engine-builds.py` of angelscript-cli.
 
 The fixes are listed in `scripts/sdk.py` (`SDK_FIXES` and `SDK_BORROW`). Each one is a one-line change that a current compiler requires.
 
+## Which releases
+
+`engines/versions.json` pins every 2.x release angelcode.com publishes, from 2.1.0c to the current one (81 SHA-256 hashes), so `prepare-sdk.py` can fetch any of them. What builds and runs is a smaller set:
+
+| Releases | What works |
+| --- | --- |
+| 2.30 and later | Built and smoke-tested on every target in CI. These are the releases angelscript-cli ships. |
+| 2.20 to 2.29 | Build through this module; `engines/matrix.json` records which tests of the CLI pass. 2.20.0 and 2.20.1 crash in about half of them. |
+| 2.1 to 2.19 | The SDK archives only. The add-ons of these releases assume a 32-bit `size_t` and the context API has no call stack by level, so angelscript-cli does not build against them. |
+
 ## Use it
 
 ```sh

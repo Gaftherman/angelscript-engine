@@ -18,37 +18,78 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: engine-versions
+  cancel-in-progress: false
+
 jobs:
   matrix:
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
+      # The weekly run is skipped when neither this repository nor the CLI changed since the last complete run.
+      # A manual run always tests.
+      - name: Look for changes since the last run
+        id: head
+        run: |
+          cli=$(git ls-remote https://github.com/Gaftherman/angelscript-cli "${{ inputs.cli_ref || 'main' }}" | cut -f1 | head -n1)
+          echo "key=matrix-done-${GITHUB_SHA}-${cli}-${{ inputs.from || '2.20.0' }}" >> "$GITHUB_OUTPUT"
+      - name: Find the last complete run
+        id: done
+        if: github.event_name == 'schedule'
+        uses: actions/cache/restore@v4
+        with:
+          path: build/done
+          key: ${{ steps.head.outputs.key }}
+      - name: Nothing changed
+        if: steps.done.outputs.cache-hit == 'true'
+        run: echo "Neither repository changed since the last complete run." >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/checkout@v4
+        if: steps.done.outputs.cache-hit != 'true'
         with:
           repository: Gaftherman/angelscript-cli
           ref: ${{ inputs.cli_ref || 'main' }}
           path: cli
           submodules: true
       - uses: actions/setup-python@v5
+        if: steps.done.outputs.cache-hit != 'true'
         with:
           python-version: '3.x'
+      - name: Reuse the downloaded releases
+        if: steps.done.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: build/matrix/cache
+          key: angelcode-releases-${{ hashFiles('engines/versions.json') }}
       - name: Install Ninja
+        if: steps.done.outputs.cache-hit != 'true'
         run: python -m pip install ninja
       - name: Test every release
+        if: steps.done.outputs.cache-hit != 'true'
         env:
           FROM: ${{ inputs.from || '2.20.0' }}
           ASDEBUGGER_DIR: ${{ github.workspace }}/cli/external/angelscript-dap
-        run: python scripts/engine-matrix.py --cli cli --from "$FROM" --out build/matrix.json --work build/matrix
+        run: python scripts/engine-matrix.py --cli cli --from "$FROM" --out build/matrix.json --work build/matrix --cache build/matrix/cache
       - name: Write the report
+        if: steps.done.outputs.cache-hit != 'true'
         run: |
           cp build/matrix.json engines/matrix.json
           python scripts/engine-report.py
           cat docs/ENGINE_VERSIONS.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
+        if: steps.done.outputs.cache-hit != 'true'
         with:
           name: engine-matrix
           path: |
             engines/matrix.json
             docs/ENGINE_VERSIONS.md
             build/matrix/logs/*.log
+      - name: Record the complete run
+        if: steps.done.outputs.cache-hit != 'true'
+        run: mkdir -p build/done && date -u > build/done/at
+      - uses: actions/cache/save@v4
+        if: steps.done.outputs.cache-hit != 'true'
+        with:
+          path: build/done
+          key: ${{ steps.head.outputs.key }}

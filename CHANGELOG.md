@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0]
+
+### Added
+
+- `engines/versions.json` pins the releases from 2.1.0c to 2.19.2 too (81 pins in total), so `prepare-sdk.py` can fetch every release angelcode.com publishes. They are SDK archives only: angelscript-cli does not build against releases before 2.20.
+- The README says which releases build and run.
+- The weekly matrix reuses the downloaded releases and is skipped when neither this repository nor angelscript-cli changed since the last complete run.
+
+### Changed
+
+- CI skips documentation-only changes, cancels superseded runs and reuses the downloaded release.
+
 ## [0.1.1]
 
 ### Changed
