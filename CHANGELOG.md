@@ -1,24 +1,30 @@
 # Changelog
 
-## [0.2.0]
+## [0.1.2] - 2026-11-26
 
 ### Added
 
 - `engines/versions.json` pins the releases from 2.1.0c to 2.19.2 too (81 pins in total), so `prepare-sdk.py` can fetch every release angelcode.com publishes. They are SDK archives only: angelscript-cli does not build against releases before 2.20.
-- The README says which releases build and run.
+- The README says which releases build and run, restructured with a dedicated usage guide in `docs/`.
 - The weekly matrix reuses the downloaded releases and is skipped when neither this repository nor angelscript-cli changed since the last complete run.
 
 ### Changed
 
 - CI skips documentation-only changes, cancels superseded runs and reuses the downloaded release.
 
-## [0.1.1]
+---
+**Full Changelog**: https://github.com/Gaftherman/angelscript-engine/compare/v0.1.1...v0.1.2
+
+## [0.1.1] - 2026-11-25
 
 ### Changed
 
 - The README describes the repository as the legacy support for releases older than the one angelscript-cli bundles. The current release no longer depends on it; the weekly matrix still builds it through `cmake/AngelScriptEngine.cmake`.
 
-## [0.1.0]
+---
+**Full Changelog**: https://github.com/Gaftherman/angelscript-engine/compare/v0.1.0...v0.1.1
+
+## [0.1.0] - 2026-11-25
 
 ### Added
 
