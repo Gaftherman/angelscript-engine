@@ -27,7 +27,7 @@ The module sets `ANGELSCRIPT_ENGINE_NUMBER` (for example 23600), `ANGELSCRIPT_EN
 
 ## Role
 
-The CLI installs one AngelScript release at a time. The current release is built by [angelscript-cli](https://github.com/Gaftherman/angelscript-cli) from its `external/angelscript` submodule, because it needs no patches. The weekly matrix still builds the current release through this module too, so a regression in the module shows up before an older release needs it. The releases the CLI offers are listed in `scripts/plan-engine-builds.py` of angelscript-cli.
+The CLI installs one AngelScript release at a time. The current release is built by [angelscript-cli](https://github.com/angelscript-tools/angelscript-cli) from its `external/angelscript` submodule, because it needs no patches. The weekly matrix still builds the current release through this module too, so a regression in the module shows up before an older release needs it. The releases the CLI offers are listed in `scripts/plan-engine-builds.py` of angelscript-cli.
 
 ## Targets in CI
 

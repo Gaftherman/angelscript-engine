@@ -2,7 +2,7 @@
 
 **[English](README.md)** | **[Español](docs/README.es.md)**
 
-Builds any official [AngelScript](https://www.angelcode.com/angelscript/) release, from 2.20 to the latest, with a few compatibility fixes applied to a copy of the sources. [angelscript-cli](https://github.com/Gaftherman/angelscript-cli) uses it to build one executable per engine version.
+Builds any official [AngelScript](https://www.angelcode.com/angelscript/) release, from 2.20 to the latest, with a few compatibility fixes applied to a copy of the sources. [angelscript-cli](https://github.com/angelscript-tools/angelscript-cli) uses it to build one executable per engine version.
 
 This is the **legacy support** for older releases. The current release is built by the CLI straight from the official sources; every earlier release goes through here.
 
@@ -45,17 +45,17 @@ Targets: Windows x64 and x86, Linux x64, x86 and arm64, macOS x64 and arm64. The
 
 ## Support
 
-Open an [issue](https://github.com/Gaftherman/angelscript-engine/issues) for a release that does not build or a wrong pin. Problems with the executable go to [angelscript-cli](https://github.com/Gaftherman/angelscript-cli/issues).
+Open an [issue](https://github.com/angelscript-tools/angelscript-engine/issues) for a release that does not build or a wrong pin. Problems with the executable go to [angelscript-cli](https://github.com/angelscript-tools/angelscript-cli/issues).
 
 ## Related
 
 | Project | Use |
 | --- | --- |
-| [angelscript-cli](https://github.com/Gaftherman/angelscript-cli) | Run, check and debug scripts from the terminal |
-| [angelscript-lsp](https://github.com/Gaftherman/angelscript-lsp) | Editor support for VS Code |
-| [angelscript-dap](https://github.com/Gaftherman/angelscript-dap) | Debugger core |
-| [angelscript-jit](https://github.com/Gaftherman/angelscript-jit) | Optional JIT compiler |
-| [angelscript-debugger-example](https://github.com/Gaftherman/angelscript-debugger-example) | A host that shows how to use the debugger |
+| [angelscript-cli](https://github.com/angelscript-tools/angelscript-cli) | Run, check and debug scripts from the terminal |
+| [angelscript-lsp](https://github.com/angelscript-tools/angelscript-lsp) | Editor support for VS Code |
+| [angelscript-dap](https://github.com/angelscript-tools/angelscript-dap) | Debugger core |
+| [angelscript-jit](https://github.com/angelscript-tools/angelscript-jit) | Optional JIT compiler |
+| [angelscript-debugger-example](https://github.com/angelscript-tools/angelscript-debugger-example) | A host that shows how to use the debugger |
 
 ## Credits
 

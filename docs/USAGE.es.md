@@ -27,7 +27,7 @@ El módulo define `ANGELSCRIPT_ENGINE_NUMBER` (por ejemplo 23600), `ANGELSCRIPT_
 
 ## Papel
 
-La CLI instala una versión de AngelScript cada vez. [angelscript-cli](https://github.com/Gaftherman/angelscript-cli) compila la versión actual desde su submódulo `external/angelscript`, porque no necesita parches. La matriz semanal también compila la versión actual con este módulo, para que una regresión del módulo se vea antes de que una versión antigua la necesite. Las versiones que ofrece la CLI están en `scripts/plan-engine-builds.py` de angelscript-cli.
+La CLI instala una versión de AngelScript cada vez. [angelscript-cli](https://github.com/angelscript-tools/angelscript-cli) compila la versión actual desde su submódulo `external/angelscript`, porque no necesita parches. La matriz semanal también compila la versión actual con este módulo, para que una regresión del módulo se vea antes de que una versión antigua la necesite. Las versiones que ofrece la CLI están en `scripts/plan-engine-builds.py` de angelscript-cli.
 
 ## Destinos en CI
 

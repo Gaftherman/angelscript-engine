@@ -33,7 +33,7 @@ jobs:
       - name: Look for changes since the last run
         id: head
         run: |
-          cli=$(git ls-remote https://github.com/Gaftherman/angelscript-cli "${{ inputs.cli_ref || 'main' }}" | cut -f1 | head -n1)
+          cli=$(git ls-remote https://github.com/angelscript-tools/angelscript-cli "${{ inputs.cli_ref || 'main' }}" | cut -f1 | head -n1)
           echo "key=matrix-done-${GITHUB_SHA}-${cli}-${{ inputs.from || '2.20.0' }}" >> "$GITHUB_OUTPUT"
       - name: Find the last complete run
         id: done
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v4
         if: steps.done.outputs.cache-hit != 'true'
         with:
-          repository: Gaftherman/angelscript-cli
+          repository: angelscript-tools/angelscript-cli
           ref: ${{ inputs.cli_ref || 'main' }}
           path: cli
           submodules: true

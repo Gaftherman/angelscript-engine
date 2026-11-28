@@ -13,7 +13,7 @@
 - CI skips documentation-only changes, cancels superseded runs and reuses the downloaded release.
 
 ---
-**Full Changelog**: https://github.com/Gaftherman/angelscript-engine/compare/v0.1.1...v0.1.2
+**Full Changelog**: https://github.com/angelscript-tools/angelscript-engine/compare/v0.1.1...v0.1.2
 
 ## [0.1.1] - 2026-11-25
 
@@ -22,7 +22,7 @@
 - The README describes the repository as the legacy support for releases older than the one angelscript-cli bundles. The current release no longer depends on it; the weekly matrix still builds it through `cmake/AngelScriptEngine.cmake`.
 
 ---
-**Full Changelog**: https://github.com/Gaftherman/angelscript-engine/compare/v0.1.0...v0.1.1
+**Full Changelog**: https://github.com/angelscript-tools/angelscript-engine/compare/v0.1.0...v0.1.1
 
 ## [0.1.0] - 2026-11-25
 
